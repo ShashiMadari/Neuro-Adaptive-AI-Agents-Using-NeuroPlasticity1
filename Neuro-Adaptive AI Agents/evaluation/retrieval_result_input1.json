@@ -1,0 +1,18 @@
+{
+    "query": "hello can you explain the law of conservation of energy Please describe it in simple words.",
+    "retrieved": [
+        {
+            "caption": "The law of conservation of energy asserts that within a closed system, the total amount of energy remains constant, never created or destroyed, but continuously transforms between various forms such as potential, kinetic, heat, and sound.",
+            "score": 0.8837592691333409,
+            "sim_value": 0.7675185456532114,
+            "sim_key": 0.9999999926134705
+        }
+    ],
+    "accuracy": {
+        "mean": 0.7803459763526917,
+        "std": 0.0,
+        "scores": [
+            0.7803459763526917
+        ]
+    }
+}

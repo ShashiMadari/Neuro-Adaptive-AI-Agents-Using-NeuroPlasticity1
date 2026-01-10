@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neuro-Adaptive Multi-Agent System</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+body {
+    background-color: #0e1117;
+    color: #fff;
+    font-family: "Segoe UI", sans-serif;
+}
+.container-box {
+    margin-top: 2rem;
+}
+.agent-card {
+    background-color: #1c1f26;
+    border-radius: 12px;
+    padding: 1.5rem;
+    min-height: 600px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+.agent-header {
+    font-weight: 600;
+    color: #00c3ff;
+    margin-bottom: 0.5rem;
+}
+textarea {
+    background: #12151b;
+    color: #fff;
+    border: 1px solid #333;
+    width: 100%;
+    border-radius: 8px;
+    padding: 10px;
+    resize: none;
+}
+.audio-player {
+    margin-top: 10px;
+    width: 100%;
+}
+.feedback-box {
+    margin-top: 10px;
+}
+button {
+    background-color: #00c3ff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #00a0d4;
+}
+.preview-box {
+    margin-top: 1rem;
+    text-align: center;
+}
+.preview-img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+    border: 1px solid #333;
+}
+</style>
+</head>
+
+<body>
+<div class="container container-box">
+    <h2 class="text-center mb-4">🧠 Neuro-Adaptive Multi-Agent Intelligence</h2>
+
+    <!-- Common Input Form -->
+    <form id="commonForm" enctype="multipart/form-data">
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <label>Text Input</label>
+                <textarea name="text_input" rows="4" placeholder="Enter your question or statement..."></textarea>
+            </div>
+            <div class="col-md-4">
+                <label>Upload Image</label>
+                <input type="file" id="image_file" name="image_file" accept="image/*" class="form-control mb-2" onchange="previewImage(event)">
+                <div id="imagePreview" class="preview-box"></div>
+
+                <label>Upload Audio</label>
+                <input type="file" id="audio_file" name="audio_file" accept="audio/*" class="form-control" onchange="previewAudio(event)">
+                <div id="audioPreview" class="preview-box"></div>
+            </div>
+        </div>
+    </form>
+    <!-- Add this after your input section in index1.html -->
+<div class="text-center my-4">
+    <button id="generate3DButton" disabled class="btn btn-outline-info">
+        🎛️ Generate 3D Input Visualization
+    </button>
+</div>
+
+    <div class="row">
+        <!-- Normal Agent -->
+        <div class="col-md-4">
+            <div class="agent-card">
+                <div class="agent-header">🤖 NORMAL AGENT</div>
+                <button class="w-100 mb-3" onclick="runAgent('normal')">Run Normal Agent</button>
+                <div id="normalReasoning"></div>
+                <div id="normalOutput" class="mt-3"></div>
+                <div class="feedback-box mt-3">
+                    <textarea placeholder="Give feedback (optional)..."></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blind Agent -->
+        <div class="col-md-4">
+            <div class="agent-card">
+                <div class="agent-header">👁️‍🗨️ BLIND AGENT</div>
+                <button class="w-100 mb-3" onclick="runAgent('blind')">Run Blind Agent</button>
+                <div id="blindReasoning"></div>
+                <div id="blindOutput" class="mt-3"></div>
+                <div class="feedback-box mt-3">
+                    <textarea placeholder="Give feedback (optional)..."></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mute Agent -->
+        <div class="col-md-4">
+            <div class="agent-card">
+                <div class="agent-header">🤫 MUTE AGENT</div>
+                <button class="w-100 mb-3" onclick="runAgent('mute')">Run Mute Agent</button>
+                <div id="muteReasoning"></div>
+                <div id="muteOutput" class="mt-3"></div>
+                <div class="feedback-box mt-3">
+                    <textarea placeholder="Give feedback (optional)..."></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// === Image Preview ===
+function previewImage(event) {
+    const imagePreview = document.getElementById("imagePreview");
+    const file = event.target.files[0];
+    if (!file) {
+        imagePreview.innerHTML = "";
+        return;
+    }
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        imagePreview.innerHTML = `
+            <p>🖼️ <strong>Selected Image:</strong></p>
+            <img src="${e.target.result}" alt="Uploaded Image" class="preview-img">
+        `;
+    };
+    reader.readAsDataURL(file);
+}
+
+// === Audio Preview ===
+function previewAudio(event) {
+    const audioPreview = document.getElementById("audioPreview");
+    const file = event.target.files[0];
+    if (!file) {
+        audioPreview.innerHTML = "";
+        return;
+    }
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        audioPreview.innerHTML = `
+            <p>🎵 <strong>Selected Audio:</strong></p>
+            <audio controls class="audio-player">
+                <source src="${e.target.result}" type="${file.type}">
+                Your browser does not support the audio element.
+            </audio>
+        `;
+    };
+    reader.readAsDataURL(file);
+}
+const textInput = document.querySelector('textarea[name="text_input"]');
+const imageInput = document.getElementById('image_file');
+const audioInput = document.getElementById('audio_file');
+const generate3DButton = document.getElementById('generate3DButton');
+
+function checkInputs() {
+    if (textInput.value.trim() || imageInput.files.length > 0 || audioInput.files.length > 0) {
+        generate3DButton.disabled = false;
+    } else {
+        generate3DButton.disabled = true;
+    }
+}
+
+[textInput, imageInput, audioInput].forEach(el => {
+    el.addEventListener('input', checkInputs);
+    el.addEventListener('change', checkInputs);
+});
+
+generate3DButton.addEventListener('click', async () => {
+    const formElement = document.getElementById('commonForm');
+    const formData = new FormData(formElement);
+
+    try {
+        generate3DButton.innerText = "⏳ Generating...";
+        const res = await fetch("/generate_3d", { method: "POST", body: formData });
+        const data = await res.json();
+        if (data.error) {
+            alert("Error: " + data.error);
+            console.error(data.trace);
+        } else {
+            window.location.href = data.redirect_url; // Redirect to /visualize
+        }
+    } catch (err) {
+        console.error("3D generation failed:", err);
+        alert("Error generating visualization!");
+    } finally {
+        generate3DButton.innerText = "🎛️ Generate 3D Input Visualization";
+    }
+});
+
+// === Run Agent ===
+async function runAgent(agentType) {
+    const formElement = document.getElementById("commonForm");
+    const formData = new FormData(formElement);
+    formData.set("agent_type", agentType);
+
+    try {
+        const res = await fetch("/run_agent", { method: "POST", body: formData });
+        const data = await res.json();
+
+        if (data.error) {
+            alert("Error: " + data.error);
+            console.error(data.trace);
+            return;
+        }
+
+        if (agentType === "normal") {
+            document.getElementById("normalReasoning").innerHTML =
+                `<pre>${data.reasoned_sentence || 'No reasoning'}</pre>`;
+            document.getElementById("normalOutput").innerHTML =
+                `<p><strong>🧑‍🏫 Explanation:</strong> ${data.explanation?.text || 'No explanation'}</p>` +
+                (data.explanation?.audio
+                    ? `<audio controls class="audio-player"><source src="${data.explanation.audio}" type="audio/mpeg"></audio>`
+                    : "");
+        }
+
+        else if (agentType === "blind") {
+            document.getElementById("blindReasoning").innerHTML =
+                `<pre>${data.reasoned_sentence || 'No reasoning'}</pre>`;
+            document.getElementById("blindOutput").innerHTML =
+                `<p><strong>🎧 Audio Explanation:</strong></p>` +
+                (data.explanation?.audio_file
+                    ? `<audio controls class="audio-player"><source src="${data.explanation.audio_file}" type="audio/mpeg"></audio>`
+                    : "No audio found.") +
+                `<hr><p><strong>Mute Feedback:</strong> ${data.explanation?.mute_feedback?.text || 'No feedback generated.'}</p>`;
+        }
+
+        else if (agentType === "mute") {
+            document.getElementById("muteReasoning").innerHTML =
+                `<pre>${data.reasoned_sentence || 'No reasoning'}</pre>`;
+            document.getElementById("muteOutput").innerHTML =
+                `<p><strong>✍️ Text Explanation:</strong> ${data.explanation?.text || 'No explanation'}</p>` +
+                (data.explanation?.blind_feedback?.audio_file
+                    ? `<audio controls class="audio-player"><source src="${data.explanation.blind_feedback.audio_file}" type="audio/mpeg"></audio>`
+                    : "No blind feedback audio.");
+        }
+
+    } catch (err) {
+        console.error("Error running agent:", err);
+        alert("Something went wrong. Check console for details.");
+    }
+}
+</script>
+</body>
+</html>

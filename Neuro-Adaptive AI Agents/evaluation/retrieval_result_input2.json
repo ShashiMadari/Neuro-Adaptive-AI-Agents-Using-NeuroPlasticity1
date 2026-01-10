@@ -1,0 +1,18 @@
+{
+    "query": "first defined the law of conservation of energy Next, explain why energy cannot be created or destroyed.",
+    "retrieved": [
+        {
+            "caption": "The law of conservation of energy asserts that within a closed system, the total amount of energy remains constant, never created or destroyed, but continuously transforms between various forms such as potential, kinetic, heat, and sound.",
+            "score": 0.8175434635987672,
+            "sim_value": 0.7341037141644067,
+            "sim_key": 0.9009832130331277
+        }
+    ],
+    "accuracy": {
+        "mean": 0.7227752804756165,
+        "std": 0.0,
+        "scores": [
+            0.7227752804756165
+        ]
+    }
+}

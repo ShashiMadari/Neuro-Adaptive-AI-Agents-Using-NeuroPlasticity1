@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large ML files (handled by LFS)
+*.pt
+*.ckpt
+*.h5

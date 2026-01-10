@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🧠 Neuro-Adaptive Multi-Agent System</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at 20% 20%, #141e30, #243b55);
+    color: #e0e0e0;
+    text-align: center;
+    overflow-x: hidden;
+}
+.hero {
+    padding: 6rem 2rem;
+}
+h1 {
+    font-size: 2.8rem;
+    color: #00eaff;
+    text-shadow: 0 0 15px rgba(0,234,255,0.5);
+}
+p {
+    max-width: 800px;
+    margin: 20px auto;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #cfd8dc;
+}
+button {
+    margin-top: 40px;
+    padding: 14px 40px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #00eaff, #007bff);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0, 234, 255, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 30px rgba(0, 234, 255, 0.6);
+}
+.footer {
+    margin-top: 5rem;
+    font-size: 0.9rem;
+    color: #90a4ae;
+}
+</style>
+</head>
+<body>
+<div class="hero">
+    <h1>🧠 Neuro-Adaptive Multi-Agent System</h1>
+    <p>
+        Welcome to a new era of AI — where intelligence adapts like the human brain.<br><br>
+        This system integrates <strong>Normal</strong>, <strong>Blind</strong>, and <strong>Mute</strong> AI agents 
+        that collaboratively reason across <strong>text</strong>, <strong>audio</strong>, and <strong>image</strong> modalities.<br><br>
+        Inspired by <strong>neuroplasticity</strong>, these agents simulate sensory adaptation and cognitive compensation — 
+        enhancing their understanding through multi-sensory learning.
+    </p>
+    <a href="{{ url_for('start_system') }}">
+        <button>🚀 Launch Multi-Agent System</button>
+    </a>
+</div>
+<div class="footer">
+    © 2025 Neuro-Adaptive AI Project | Cognitive Intelligence Lab
+</div>
+</body>
+</html>

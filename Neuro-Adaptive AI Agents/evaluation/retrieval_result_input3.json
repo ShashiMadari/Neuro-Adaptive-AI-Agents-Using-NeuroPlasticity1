@@ -1,0 +1,25 @@
+{
+    "query": "what does the law of conservation of energy mean Summarize the concept in one sentence.",
+    "retrieved": [
+        {
+            "caption": "The law of conservation of energy dictates that the total energy within a closed system remains constant, never created or destroyed. Instead, energy continuously transforms between various forms like potential, kinetic, sound, and heat, ensuring its overall sum is always preserved.",
+            "score": 0.7752968733114891,
+            "sim_value": 0.6844298983719362,
+            "sim_key": 0.8661638482510419
+        },
+        {
+            "caption": "The law of conservation of energy dictates that within an isolated system, total energy remains constant, transforming between forms without being created or destroyed. This fundamental principle is mathematically expressed as E_total_initial = E_total_final, asserting that the total energy at any initial point equals that at any final point.",
+            "score": 0.7149885600488871,
+            "sim_value": 0.653517115667699,
+            "sim_key": 0.7764600044300752
+        }
+    ],
+    "accuracy": {
+        "mean": 0.6264743804931641,
+        "std": 0.017039597034454346,
+        "scores": [
+            0.6435139775276184,
+            0.6094347834587097
+        ]
+    }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3D Reasoning Embedding Space</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+body {
+    background-color: #0e1117;
+    color: #fff;
+    font-family: "Segoe UI", sans-serif;
+    text-align: center;
+    padding: 2rem;
+}
+.plot-container img {
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    width: 70%;
+    margin-top: 2rem;
+}
+.details {
+    margin-top: 2rem;
+    background-color: #1c1f26;
+    display: inline-block;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+.details h5 {
+    color: #00c3ff;
+    margin-bottom: 1rem;
+}
+.details p {
+    font-size: 1.1rem;
+}
+.back-button {
+    margin-top: 2rem;
+}
+</style>
+</head>
+
+<body>
+    <h2 class="mb-4">🧠 3D Reasoning Embedding Space</h2>
+    <p class="text-muted">This visualization shows how the reasoning sentences from all three agents relate in semantic space.</p>
+
+    <div class="plot-container">
+        <img src="{{ plot_url }}" alt="3D Reasoning Visualization">
+    </div>
+
+    <div class="details mt-4">
+        <h5>📏 Distance Metrics</h5>
+        <p><strong>Normal ↔ Blind:</strong> {{ dist_blind|round(3) }}</p>
+        <p><strong>Normal ↔ Mute:</strong> {{ dist_mute|round(3) }}</p>
+        <hr style="border-color:#333;">
+        <p><strong>🔍 Closest Agent to Normal:</strong> <span style="color:#00c3ff;">{{ closest }}</span></p>
+    </div>
+
+    <div class="back-button">
+        <a href="{{ url_for('start_system') }}" class="btn btn-outline-info mt-4">⬅ Back to Multi-Agent Interface</a>
+    </div>
+</body>
+</html>

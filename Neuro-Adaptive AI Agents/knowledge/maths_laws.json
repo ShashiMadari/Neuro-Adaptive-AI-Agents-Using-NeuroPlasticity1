@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Pythagoras Theorem",
+    "statement": "In a right-angled triangle, the square of the hypotenuse is equal to the sum of the squares of the other two sides.",
+    "formula": "c^2 = a^2 + b^2",
+    "explanation": "This theorem links geometry and algebra and is foundational in trigonometry.",
+    "example": "If a right triangle has legs 3 and 4, the hypotenuse is 5."
+  },
+  {
+    "name": "Binomial Theorem",
+    "statement": "The expansion of (a + b)^n is given by the sum of terms involving binomial coefficients.",
+    "formula": "(a + b)^n = Σ [nCk * a^(n-k) * b^k]",
+    "explanation": "This theorem generalizes powers of sums and is used in algebra, probability, and calculus.",
+    "example": "(x + y)^3 = x^3 + 3x^2y + 3xy^2 + y^3"
+  },
+  {
+    "name": "Fundamental Theorem of Calculus",
+    "statement": "Differentiation and integration are inverse operations.",
+    "explanation": "The theorem connects the concept of the derivative with the definite integral.",
+    "example": "If F(x) is the antiderivative of f(x), then ∫ f(x) dx = F(b) - F(a)."
+  },
+  {
+    "name": "Baye's Theorem",
+    "statement": "The probability of an event is based on prior knowledge of related conditions.",
+    "formula": "P(A|B) = [P(B|A) * P(A)] / P(B)",
+    "explanation": "This theorem updates probabilities as new information becomes available.",
+    "example": "If 1% of emails are spam, but 90% of spam emails contain the word 'lottery', Bayes' theorem helps compute the probability an email is spam if it contains 'lottery'."
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "force": "F = m * a",
+  "work": "W = F * d * cos(theta)",
+  "kinetic_energy": "KE = 0.5 * m * v**2",
+  "potential_energy": "PE = m * g * h",
+  "momentum": "p = m * v",
+  "ohms_law": "V = I * R"
+}

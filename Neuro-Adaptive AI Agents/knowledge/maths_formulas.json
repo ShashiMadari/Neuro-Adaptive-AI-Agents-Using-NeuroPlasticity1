@@ -1,0 +1,8 @@
+{
+  "quadratic": "x = (-b ± sqrt(b**2 - 4*a*c)) / (2*a)",
+  "pythagoras": "c**2 = a**2 + b**2",
+  "circle_area": "A = pi * r**2",
+  "sphere_volume": "V = (4/3) * pi * r**3",
+  "sin_rule": "sin**2(theta) + cos**2(theta) = 1",
+  "derivative_power_rule": "d/dx (x**n) = n * x**(n-1)"
+}

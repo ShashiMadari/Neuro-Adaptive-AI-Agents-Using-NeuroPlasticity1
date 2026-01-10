@@ -1,0 +1,41 @@
+[
+  {
+    "name": "Newton’s First Law",
+    "statement": "An object remains at rest or in uniform motion in a straight line unless acted upon by an external force.",
+    "explanation": "This law describes inertia. It explains why a moving object continues to move unless friction or another force slows it down.",
+    "example": "A book on a table stays at rest until you push it."
+  },
+  {
+    "name": "Newton’s Second Law",
+    "statement": "The force acting on an object is equal to the rate of change of momentum.",
+    "formula": "F = m * a",
+    "explanation": "This law quantifies how force produces acceleration. A greater mass requires more force for the same acceleration.",
+    "example": "Pushing an empty shopping cart is easier than pushing a full one."
+  },
+  {
+    "name": "Newton’s Third Law",
+    "statement": "For every action, there is an equal and opposite reaction.",
+    "explanation": "Forces always occur in pairs. If object A exerts a force on object B, then B exerts an equal and opposite force on A.",
+    "example": "When you jump off a boat, the boat moves backward."
+  },
+  {
+    "name": "Law of Conservation of Energy",
+    "statement": "Energy cannot be created or destroyed, only transformed from one form to another.",
+    "explanation": "The total energy of an isolated system remains constant over time.",
+    "example": "Potential energy at the top of a hill converts to kinetic energy as an object rolls down."
+  },
+  {
+    "name": "Universal Law of Gravitation",
+    "statement": "Every mass attracts every other mass with a force proportional to the product of their masses and inversely proportional to the square of the distance between them.",
+    "formula": "F = G * (m1 * m2) / r^2",
+    "explanation": "This explains planetary motion and why objects fall towards Earth.",
+    "example": "The Earth attracts the Moon, keeping it in orbit."
+  },
+  {
+    "name": "Einstein’s Mass-Energy Equivalence",
+    "statement": "Mass and energy are interchangeable; the total energy of an object is equal to its mass multiplied by the speed of light squared.",
+    "formula": "E = m * c^2",
+    "explanation": "This principle from Einstein's theory of relativity shows that a small amount of mass can be converted into a huge amount of energy. It underlies nuclear reactions in stars and reactors.",
+    "example": "In nuclear fusion inside the Sun, hydrogen nuclei fuse into helium, releasing energy because a tiny fraction of mass is converted into radiant energy."
+  }
+]

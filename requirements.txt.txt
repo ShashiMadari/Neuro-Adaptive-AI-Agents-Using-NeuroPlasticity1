@@ -1,0 +1,8 @@
+pip install torch torchvision torchaudio
+pip install sentence-transformers transformers
+pip install flask python-dotenv
+pip install librosa pydub webrtcvad
+pip install vosk deepface
+pip install google-generativeai
+pip install scikit-learn matplotlib numpy pillow
+pip install pyttsx3
